@@ -4,6 +4,7 @@ import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  //validation
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, // take only those which is only entioned in dto
