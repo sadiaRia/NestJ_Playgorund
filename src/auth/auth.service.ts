@@ -37,7 +37,6 @@ export class AuthService {
     //send back user
     return this.signToken(user.id, user.email);
     // return user;
-
     // return { msg: 'signin' };
   }
 
@@ -58,9 +57,10 @@ export class AuthService {
           createdAt: true,
         },
       });
+      return this.signToken(user.id, user.email);
 
       //return the saved user
-      return user;
+      // return user;
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError) {
         if (error.code === 'P2002') {
